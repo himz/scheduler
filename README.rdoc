@@ -1,0 +1,7 @@
+Read Me For the Schedule Website
+Description for the site :
+Aim is to log events for the users. The site supports multi user enviornment(though ready for 1 user only now). Each user has set of categories, and each category can have many events. For each event user logs the time he has invested in the event. 
+
+To see all the log for an event, user just needs to search the event in seach box and will be provided with the list of all the logs pertaining to that event. This way its easy for the user to log . 
+
+For layout, the site is using Twitter BootStrap gem. 

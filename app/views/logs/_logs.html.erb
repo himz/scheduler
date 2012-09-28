@@ -1,0 +1,50 @@
+<%- model_class = Log -%>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:event_id) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:hours) %></th>  
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= link_to log.id, log_path(log) %></td>
+        <td><%= log.date %></td>
+        <td><%= log.event.ename %></td>
+        <td><%= log.event.category.cname %></td>
+        <td><%= log.created_at %></td>
+        <td><%= log.hours %></td>
+<td><%= log.total_hours %></td>
+        <td>
+          <%= link_to "Edit Log",
+                      edit_log_path(log), :class => 'btn btn-mini' %>
+          <%= link_to "Delete Log",
+                      log_path(log),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+<tfoot>
+    <tr>
+      <th><%= %></th>
+      <th><%= %></th>
+      <th><%= %></th>
+      <th><%= %></th>
+      <th><%= "Total Hours" %></th>
+
+    </tr>
+  </tfoot>
+</table>
+
+<%= will_paginate @logs %>

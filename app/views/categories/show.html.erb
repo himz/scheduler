@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category Name:</b>
+  <%= @category.cname %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @category.desc %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @category.user_id %>
+</p>
+
+<p>
+  <b>Events Under it :</b>
+  
+  <% id = @category.id %>
+  <% @values = Event.find_all_by_category_id (id) %>
+  <% @values.each do |f| %>
+  </br><li><%= link_to f.ename, f %></li>
+  <%end%>	
+   
+   
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+

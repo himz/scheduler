@@ -1,0 +1,24 @@
+<%= form_for @log, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hours, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :event_id, :class => 'control-label' %>
+    <%= f.collection_select :event_id,Event.find(:all),:id,:ename%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                logs_path, :class => 'btn' %>
+  </div>
+<% end %>
