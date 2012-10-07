@@ -25,11 +25,8 @@
         <td>
           <%= link_to "Edit Log",
                       edit_log_path(log), :class => 'btn btn-mini' %>
-          <%= link_to "Delete Log",
-                      log_path(log),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+            <td><%=button_to "Delete Log", { :action => :destroy, :id => log.id },:confirm => "Are you sure?", :method => :delete,:class => 'btn btn-mini btn-danger' 
+            %></td>
         </td>
       </tr>
     <% end %>
