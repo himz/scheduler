@@ -11,7 +11,7 @@ gem 'rails3-jquery-autocomplete'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
   # gem 'guard-rspec', '0.5.5'
   # gem 'guard-spork', '0.3.2'  
   # gem 'spork', '0.9.0'
@@ -23,6 +23,10 @@ group :assets do
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
 end
 
 group :test do
