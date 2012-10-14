@@ -203,3 +203,21 @@ Connecting to database specified by database.yml
   [1m[35m (0.0ms)[0m  rollback transaction
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-14 03:43:46 -0400
+Processing by LogsController#index as HTML
+  [1m[35mLog Load (0.0ms)[0m  SELECT "logs".* FROM "logs" ORDER BY date LIMIT 5 OFFSET 0
+  [1m[36m (0.0ms)[0m  [1mSELECT SUM("logs"."hours") AS sum_id FROM "logs" LIMIT 5 OFFSET 0[0m
+  Rendered logs/_logs.html.erb (2.0ms)
+  Rendered logs/index.html.erb within layouts/application (82.0ms)
+Completed 200 OK in 245ms (Views: 244.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
