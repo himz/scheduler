@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
+    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
+    <%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %>
+    <%= csrf_meta_tag %>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Scheduler" %></title>
@@ -63,12 +67,12 @@
             </div>
             <div class="span3">
               <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
+                <h3>Links</h3>
                 <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Events", Event  %></li>
-                  <li><%= link_to "Categories", Category  %></li>
-                  <li><%= link_to "Users", User  %></li>
+                  <li class="nav-header">Important Actions</li>
+                  <li><%= link_to "Add New Log", new_log_path  %></li>
+                  <li><%= link_to "Add New Event", new_event_path  %></li>
+                  <li><%= link_to "Add New Category", new_category_path  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
@@ -84,8 +88,10 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
-<%= javascript_include_tag 'rails' %>
+
+
+
+
 
   </body>
 </html>

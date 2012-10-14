@@ -3,7 +3,7 @@ class LogsController < ApplicationController
   # GET /logs.json
   def index
     search_logs = Log.search(params[:search])
-    @logs = search_logs.paginate :page=>params[:page],:per_page => 5
+    @logs = search_logs.order("date").paginate :page=>params[:page],:per_page => 5
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @logs }

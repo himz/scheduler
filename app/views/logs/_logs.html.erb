@@ -21,7 +21,7 @@
         <td><%= log.event.category.cname %></td>
         <td><%= log.created_at %></td>
         <td><%= log.hours %></td>
-<td><%= log.total_hours %></td>
+
         <td>
           <%= link_to "Edit Log",
                       edit_log_path(log), :class => 'btn btn-mini' %>
@@ -39,7 +39,7 @@
       <th><%= %></th>
       <th><%= %></th>
       <th><%= "Total Hours" %></th>
-
+      <th><%= @logs.total_hours%></th>
     </tr>
   </tfoot>
 </table>
