@@ -4,4 +4,8 @@ Aim is to log events for the users. The site supports multi user enviornment(tho
 
 To see all the log for an event, user just needs to search the event in seach box and will be provided with the list of all the logs pertaining to that event. This way its easy for the user to log . 
 
-For layout, the site is using Twitter BootStrap gem. 
+For layout, the site is using Twitter BootStrap gem.
+
+ajklsdflas
+asdf
+
